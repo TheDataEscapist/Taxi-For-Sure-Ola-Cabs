@@ -4,7 +4,7 @@ This database consists of 2 tables - data and localities. The table 'data' conta
 pickup_date text,	pickup_time text, pickup_datetime text, PickupArea text, DropArea text, Booking_id text, Booking_type text, Booking_mode text, Driver_number int, Service_status text, Status int, Fare int, Distance int, Confirmed_at text
 #### localities
 id int, Area text, city_id int, zone_id int
-### Tasks & Objectives:
+### Objectives & Tasks:
 After treating and updating the data with proper datetime functions, the below tasks need to be performed.
 1. Make a table with count of bookings where booking_type = p2p, catgorized by booking mode as 'phone', 'online', 'app', etc.
 2. Find top 5 drop zones in terms of average revenue.
