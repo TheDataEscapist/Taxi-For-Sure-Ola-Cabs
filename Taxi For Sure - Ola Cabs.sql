@@ -46,19 +46,19 @@ group by booking_mode;
 /*Task 2: Find top 5 drop zones in terms of average revenue*/
 select zone_id, Rnk
 from (select zone_id, avg(fare),
-rank() over (order by avg(fare) desc) as Rnk
-from data INNER JOIN localities
-on data.DropArea = localities.Area
-group by zone_id) as TempTable
+      rank() over (order by avg(fare) desc) as Rnk
+      from data INNER JOIN localities
+      on data.DropArea = localities.Area
+      group by zone_id) as TempTable
 where Rnk <= 5;
 
 /*Task 3: Find all unique driver numbers grouped by top 5 pickzones*/
 select distinct zone_id, driver_number
 from (select distinct zone_id, PickupArea,
-rank() over (order by sum(fare) desc) as Rnk
-from data INNER JOIN localities
-on data.PickupArea = localities.Area
-group by zone_id) as TempTable, data
+      rank() over (order by sum(fare) desc) as Rnk
+      from data INNER JOIN localities
+      on data.PickupArea = localities.Area
+      group by zone_id) as TempTable, data
 where TempTable.PickupArea = data.PickupArea
 and Rnk <= 5 and driver_number is not null;
 
