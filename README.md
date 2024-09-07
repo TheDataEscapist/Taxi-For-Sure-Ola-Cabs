@@ -1,12 +1,23 @@
 # Taxi-For-Sure-Ola-Cabs
-This database consists of 2 tables - data and localities. The table 'data' contains information about the bookings. Here, the unique ID is the Booking_id. The columnar distribution of both the tables are given as follows:
-#### data
-pickup_date text,	pickup_time text, pickup_datetime text, PickupArea text, DropArea text, Booking_id text, Booking_type text, Booking_mode text, Driver_number int, Service_status text, Status int, Fare int, Distance int, Confirmed_at text
-#### localities
-id int, Area text, city_id int, zone_id int
-### Objectives & Tasks:
-After treating and updating the data with proper datetime functions, the below tasks need to be performed.
-1. Make a table with count of bookings where booking_type = p2p, catgorized by booking mode as 'phone', 'online', 'app', etc.
-2. Find top 5 drop zones in terms of average revenue.
-3. Find all unique driver numbers grouped by top 5 pickzones.
-4. Make an hourwise table of bookings for week between Nov-01 to Nov-07 and highlight the hours with more than the average number of bookings day-wise.
+### Situation:
+Developed a comprehensive SQL database project to analyze and optimize the booking and locality data for a taxi service.
+
+### Task:
+Create and manage a database consisting of 2 tables - localities and data. The project required treating and updating the data using SQL commands and functions to derive meaningful insights and enhance the decision-making processes.
+
+### Action:
+#### > Database Design and Setup
+1. DDL Commands: Created the database and altered the table.
+2. DML Commands: Updated records to ensure data accuracy and integrity.
+3. Datetime Functions: Transformed text fields into proper datetime formats for accurate analysis.
+#### > Data Analysis and Querying
+1. Aggregate Functions & Group By: Generated a table with the count of bookings where booking_type = 'p2p', categorized by Booking_mode using GROUP BY.
+2. Window Functions: Calculated the top 5 drop zones in terms of average revenue.
+3. Distinct & Inner Join: Identified all unique driver numbers grouped by the top 5 pickup zones.
+4. Common Table Expressions and Aliases: Used CTEs along with aliases to simplify complex queries and improve readability.
+5. IS NOT NULL Operator: Filtered non-null values to ensure data accuracy.
+#### > Detailed Reporting
+1. Hourwise Bookings: Created an hour-wise booking table for the week of Nov-01 to Nov-07, highlighting hours with more than the average number of bookings on a day-wise basis.
+
+### Result:
+Efficiently organized and analyzed booking data, providing actionable insights that helped in understanding booking patterns, driver distribution, and revenue generation. The use of advanced SQL functions and commands ensured that the data was treated accurately and queries were optimized for performance.
